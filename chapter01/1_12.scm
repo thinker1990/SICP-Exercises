@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (pascal-triangle row column)
     (cond ((= row 1) 1)

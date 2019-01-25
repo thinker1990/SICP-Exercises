@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (fast-multi a b)
     (multi-iter a b 0))

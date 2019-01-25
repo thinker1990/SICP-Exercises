@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (fast-expt b n) 
     (expt-iter b n 1))
