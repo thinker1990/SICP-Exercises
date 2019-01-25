@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 ;; recursive process
 (define (f n)

@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (square x) 
   (* x x))

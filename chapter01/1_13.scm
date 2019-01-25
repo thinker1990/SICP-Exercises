@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 ;; ϕ = (1 + √ 5) / 2
 ;; ψ = (1 − √ 5) / 2

@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 ;; Solution from: https://voom4000.wordpress.com/2015/08/11/sicp-exercise-1-14/
 ;; You can find a counting coin tree elsewhere. Its form depends on the number of kinds of coins n, 

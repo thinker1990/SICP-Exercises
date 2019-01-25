@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (fast-multi a b)
     (cond ((= b 1) a)

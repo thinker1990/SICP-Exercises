@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (new-if predicate
                 then-clause
