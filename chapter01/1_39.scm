@@ -4,7 +4,7 @@
     (define (cont-frac-helper count) 
         (if (= count k) 
             (/ (n count x) (d count)) 
-            (/ (n count x) (+ (d count) (cont-frac-helper (inc count))))))
+            (/ (n count x) (- (d count) (cont-frac-helper (inc count))))))
     (cont-frac-helper 1))
 
 (define (inc x) (+ x 1))
