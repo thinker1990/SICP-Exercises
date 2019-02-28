@@ -1,6 +1,6 @@
 #lang sicp
 
-;; Answer from: 
+;; Answer from: https://wizardbook.wordpress.com/2010/12/02/exercise-2-22/
 
 (define (square x)
   (* x x))
