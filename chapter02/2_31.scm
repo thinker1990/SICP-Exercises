@@ -3,10 +3,12 @@
 (define (square x)
   (* x x))
 
-(define (tree-map f tree)
-  (cond ((null? tree) tree)
-        ((pair? (car tree)) (cons (tree-map f (car tree)) (tree-map f (cdr tree))))
-        (else (cons (f (car tree)) (tree-map f (cdr tree))))))
+(define (tree-map proc tree)
+  (map (lambda (subtree) 
+         (if (pair? subtree)
+             (tree-map proc subtree)
+             (proc subtree))) 
+       tree))
 
 (define (square-tree tree) 
   (tree-map square tree))
