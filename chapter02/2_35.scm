@@ -11,8 +11,7 @@
 
 (define (count-leaves tree)
   (accumulate 
-    (lambda (n sum) 
-      (+ n sum)) 
+    +
     0 
     (map (lambda (bran) 
            (if (pair? bran) (count-leaves bran) 1)) 
