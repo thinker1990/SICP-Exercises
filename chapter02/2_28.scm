@@ -2,7 +2,7 @@
 
 (define (fringe tree)
   (cond ((null? tree) tree)
-        ((not (pair? (car tree))) (cons (car tree) (fringe (cdr tree))))
+        ((not (pair? tree)) (list tree))
         (else (append (fringe (car tree)) (fringe (cdr tree))))))
       
 
