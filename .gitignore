@@ -6,3 +6,5 @@
 *.scm~
 *.scm#*
 .#*.scm
+
+compiled/
