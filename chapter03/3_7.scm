@@ -1,5 +1,7 @@
 #lang racket
 
+;; A better solution from: https://wizardbook.wordpress.com/2010/12/14/exercise-3-7/
+
 (define (make-account balance password)
   (let ((pass-list (list password)))
     (define (withdraw amount)
