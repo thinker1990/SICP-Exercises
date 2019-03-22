@@ -1,16 +1,18 @@
 #lang sicp
 
+;; An interesting solution from: https://sicp.readthedocs.io/en/latest/chp3/18.html
+
 (define (circular? x) 
   (let ((traveled (list x)))
-    (define (helper lst) 
+    (define (iter lst) 
       (if (null? lst)
         #f
         (let ((rest (cdr lst)))
           (if (memq rest traveled)
               #t
               (begin (append! traveled (list rest))
-                     (helper rest))))))
-    (helper x)))
+                     (iter rest))))))
+    (iter x)))
 
 (define (append! x y)
   (set-cdr! (last-pair x) y)
