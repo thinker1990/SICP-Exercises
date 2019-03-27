@@ -2,12 +2,12 @@
 
 (define (or-gate a b output)
   (define (nand-gate a b output) 
-    (let ((inter-and 0))
+    (let ((inter-and (make-wire)))
       (begin 
         (and-gate a b inter-and)
         (inverter inter-and output))))
-  (let ((not-a 0)
-        (not-b 0))
+  (let ((not-a (make-wire))
+        (not-b (make-wire)))
     (begin 
       (inverter a not-a)
       (inverter b not-b)
