@@ -13,7 +13,7 @@
         (second (stream-car (stream-cdr s))))
     (if (eq? first second)
         (cons-stream second 
-                     (consecutive-equal (stream-cdr s))) 
+                     (consecutive-equal (stream-cdr (stream-cdr s)))) 
         (consecutive-equal (stream-cdr (stream-cdr s))))))
 
 (consecutive-equal cube-sums)
