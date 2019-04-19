@@ -3,9 +3,9 @@
 (define (let*? exp) 
   (tagged-list? exp 'let*))
 (define (let*-identifiers exp) 
-  (cdr exp))
+  (cadr exp))
 (define (let*-body exp) 
-  (caddr exp))
+  (cddr exp))
 
 (define (first-identifier identifiers)
   (car identifiers))
@@ -27,4 +27,4 @@
                 (make-nested-lets (rest-identifiers identifiers) 
                                   body))))
 (define (make-let identifiers body)
-  (list 'let identifiers body))
+  (cons 'let (cons identifiers body)))
