@@ -31,7 +31,7 @@
 (define (let? exp) 
   (tagged-list? exp 'let))
 (define (let-identifiers exp) 
-  (cdr exp))
+  (cadr exp))
 (define (let-body exp) 
   (cddr exp))
 
