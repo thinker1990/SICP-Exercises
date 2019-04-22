@@ -52,7 +52,7 @@
     (define (scan bindings)
       (if (null? bindings)
           (add-binding-to-frame! var val frame)
-          (let ((first (car frame)))
+          (let ((first (car bindings)))
             (if (eq? var (car first))
                 (set-cdr! first val)
                 (scan (cdr bindings))))))
