@@ -3,7 +3,7 @@
 (define (scan bindings var on-match on-mismatch)
   (if (null? bindings)
       (on-mismatch)
-      (let ((first (car frame)))
+      (let ((first (car bindings)))
         (if (eq? var (car first))
             (on-match first)
             (scan (cdr bindings) var on-match on-mismatch)))))
