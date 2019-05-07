@@ -1,0 +1,38 @@
+#lang sicp
+
+;; for simplicity, only solve eight-queens puzzle, not general n-queens. 
+(define (eight-queens)
+  (let ((queen1 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen2 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen3 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen4 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen5 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen6 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen7 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))
+        (queen8 (position (amb 1 2 3 4 5 6 7 8) (amb 1 2 3 4 5 6 7 8)))) 
+    (require (distinct-row? (list queen1 queen2 queen3 queen4 queen5 queen6 queen7 queen8)))
+    (require (distinct-col? (list queen1 queen2 queen3 queen4 queen5 queen6 queen7 queen8)))
+    (require (distinct-dia? (list queen1 queen2 queen3 queen4 queen5 queen6 queen7 queen8)))
+    (list queen1 queen2 queen3 queen4 queen5 queen6 queen7 queen8)))
+
+(define (position row col)
+  (cons row col))
+(define (row position)
+  (car position))
+(define (col position)
+  (cdr position))
+(define (distinct-row? queens)
+  (distinct? (map row queens)))
+(define (distinct-col? queens)
+  (distinct? (map col queens)))
+(define (distinct-dia? queens)
+  (cond ((null? queens) true)
+        ((null? (cdr queens)) true)
+        ((same-dia? (car queens) (cdr queens)) false)
+        (else (distinct-dia? (cdr queens)))))
+(define (same-dia? q queens)
+  (cond [(null? queens) false]
+        [(= (- (row q) (row (car queens))) 
+            (- (col q) (col (car queens)))) 
+         true]
+        [else (same-dia? q (cdr queens))]))
