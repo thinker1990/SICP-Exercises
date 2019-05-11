@@ -8,7 +8,6 @@
         (second (analyze (caddr exp))))
     (lambda (env succeed fail)
       (first env
-             (lambda (value fail2) 
-               (succeed value fail2))
+             succeed
              (lambda () 
                (second env succeed fail))))))
